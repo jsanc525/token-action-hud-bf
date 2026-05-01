@@ -801,7 +801,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     }
 
     #getTooltip(item) {
-      debugger;
       if (this.#tooltipsSetting === "none") return "";
 
       if (this.#tooltipsSetting === "full" && foundry.utils.getType(item.system.richTooltip) === "function") {
