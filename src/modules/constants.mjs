@@ -2,7 +2,7 @@ const constants = {
   modulePath: 'modules/token-action-hud-bf',
   moduleId: 'token-action-hud-bf',
   moduleLabel: `Token Action HUD Black Flag`,
-  requiredCoreModuleVersion: '2.0'
+  requiredCoreModuleVersion: '2'
 };
 
 const defaults = {
