@@ -417,7 +417,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         spellsMap.set(type, circleMap);
       }
 
-      for (const [circle, slot] of Object.entries(this.actor.system.spellcasting.slots)) {
+      for (const [circle, slot] of Object.entries(this.actor.system.spellcasting?.slots ?? {})) {
         const value = slot?.value ?? '∞';
         const max = slot?.max ?? '∞';
 
