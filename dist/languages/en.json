@@ -1,0 +1,84 @@
+{
+  "tokenActionHud": {
+    "black-flag": {
+      "checks-saves": "Checks & Saves",
+      "checks": "Ability Checks",
+      "saves": "Ability Saves",
+      "skills": "Skill Checks",
+      "toolChecks": "Tool Checks",
+      "vehicleChecks": "Vehicle Checks",
+      "temporaryEffects":  "Temporary Effects",
+      "passiveEffects": "Passive Effects",
+      "inactiveEffects": "Inactive Effects",
+      "cantrips": "Cantrips",
+      "atWillSpells":"At Will Spells",
+      "innateSpells": "Innate Spells",
+      "pactSpells":"Pact Spells",
+      "ritualSpells":"Rituals",
+      "circle-1": "1st Circle Spells",
+      "circle-2":"2nd Circle Spells",
+      "circle-3": "3rd Circle Spells",
+      "circle-4":"4th Circle Spells",
+      "circle-5": "5th Circle Spells",
+      "circle-6":"6th Circle Spells",
+      "circle-7": "7th Circle Spells",
+      "circle-8":"8th Circle Spells",
+      "circle-9": "9th Circle Spells",
+
+      "combat": "Combat",
+      "character": "Character",
+
+      "actions": {
+        "rollInitiative": "Roll for Initiative",
+        "makeItemPile": "Convert to Item Pile",
+        "makeItemPiles": "Convert to Item Piles",
+        "revertItemPile": "Revert from Item Pile",
+        "revertItemPiles": "Revert from Item Piles",
+        "toggleItemPiles": "Toggle Item Piles",
+        "toggleDisposition": "Toggle Disposition",
+        "ability":  "Ability",
+        "check": "Check",
+        "feature": "Feature",
+        "save":  "Save",
+        "skill": "Skill",
+        "spell":  "Spell",
+        "item": "Item",
+        "container": "Container"
+      },
+
+      "tooltips": {
+      },
+
+      "settings": {
+        "displayUnequipped": {
+          "name": "Display Unequipped",
+          "hint": "Whether to display unequipped Items in the Inventory tab or not. (client setting)"
+        },
+        "debug": {
+          "Enable": "Debug",
+          "EnableHint": "Enable console debug outputs. (client setting)"
+        },
+        "groupGear": {
+          "name": "Group Gear",
+          "hint": "Whether to display Gear grouped into tabs by category. If disabled, Gear types will display as lists. (client setting)"
+        },
+        "maxCharacters": {
+          "name": "Max Characters",
+          "hint": "Maximum number of characters displayed in Action names. Set 0 to disable trimming. (client setting)"
+        },
+        "displayActivityIcon": {
+          "name": "Display Activities",
+          "hint": "Whether to display icon denoting presence of Activity on an Item. (client setting)"
+        },
+        "showOnlyPrepared": {
+          "name": "Show Only Prepared",
+          "hint": "Whether to only show Prepared Spells. (client setting)"
+        },
+        "showPreparedness": {
+          "name": "Show Preparedness",
+          "hint": "Whether to display icon denoting if a Spell is Prepared. (client setting)"
+        }
+      }
+    }
+  }
+}

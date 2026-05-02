@@ -7,6 +7,10 @@
       "name": "Forien",
       "discord": "forien",
       "url": "https://www.patreon.com/foundryworkshop"
+    },
+    {
+       "name": "jsanc525",
+       "discord": "jsanc525"
     }
   ],
   "url": "<<autoreplaced>>",
@@ -18,7 +22,7 @@
   "version": "<<autoreplaced>>",
   "compatibility": {
     "minimum": "12",
-    "verified": "12.331"
+    "verified": "13.351"
   },
   "relationships": {
     "systems": [

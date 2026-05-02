@@ -2,7 +2,7 @@ const constants = {
   modulePath: 'modules/token-action-hud-bf',
   moduleId: 'token-action-hud-bf',
   moduleLabel: `Token Action HUD Black Flag`,
-  requiredCoreModuleVersion: '2.0'
+  requiredCoreModuleVersion: '2'
 };
 
 const defaults = {
@@ -855,7 +855,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         spellsMap.set(type, circleMap);
       }
 
-      for (const [circle, slot] of Object.entries(this.actor.system.spellcasting.slots)) {
+      for (const [circle, slot] of Object.entries(this.actor.system?.spellcasting?.slots ?? {})) {
         const value = slot?.value ?? '∞';
         const max = slot?.max ?? '∞';
 
@@ -1043,7 +1043,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           id: type,
           name: game.i18n.localize(config.label),
           tooltip: game.i18n.localize(config.hint),
-          system: {actionId: 'rest'}
+          system: {actionId: type}
         };
       }
 
@@ -1231,7 +1231,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     }
 
     #getTooltip(item) {
-      debugger;
       if (this.#tooltipsSetting === "none") return "";
 
       if (this.#tooltipsSetting === "full" && foundry.utils.getType(item.system.richTooltip) === "function") {
@@ -1274,7 +1273,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           else if (item.system.target.affects.count === 1)
             icon1 = `<i class="fa-solid fa-user" data-tooltip="${game.i18n.localize("BF.TARGET.Label[one]")}"></i>`;
 
-          if (item.system.range.units === "touch")
+          if (item.system.range.unit === "touch")
             icon2 = `<i class="fa-solid fa-hand" data-tooltip="${game.i18n.localize("BF.WEAPON.FIELDS.range.label")}"></i>`;
           else if (item.system.range.value > 0)
             icon2 = `<i class="fa-solid fa-ruler data-tooltip=${game.i18n.localize("BF.WEAPON.FIELDS.range.label")}"></i>`;
@@ -1430,8 +1429,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           if (game.combat?.current?.tokenId === token?.id)
             return game.combat?.nextTurn();
           break;
-        case 'rest':
-          await actor.rest({type: action.id});
+        case 'long':
+        case 'short':
+          await actor.rest({type: actionId});
           break;
         case 'toggleItemPiles':
         case 'makeItemPile':
