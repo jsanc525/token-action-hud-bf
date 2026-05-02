@@ -844,7 +844,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           else if (item.system.target.affects.count === 1)
             icon1 = `<i class="fa-solid fa-user" data-tooltip="${game.i18n.localize("BF.TARGET.Label[one]")}"></i>`;
 
-          if (item.system.range.units === "touch")
+          if (item.system.range.unit === "touch")
             icon2 = `<i class="fa-solid fa-hand" data-tooltip="${game.i18n.localize("BF.WEAPON.FIELDS.range.label")}"></i>`;
           else if (item.system.range.value > 0)
             icon2 = `<i class="fa-solid fa-ruler data-tooltip=${game.i18n.localize("BF.WEAPON.FIELDS.range.label")}"></i>`;
