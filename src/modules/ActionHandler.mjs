@@ -609,7 +609,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           id: type,
           name: game.i18n.localize(config.label),
           tooltip: game.i18n.localize(config.hint),
-          system: {actionId: 'rest'}
+          system: {actionId: type}
         }
       }
 

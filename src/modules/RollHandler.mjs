@@ -110,8 +110,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           if (game.combat?.current?.tokenId === token?.id)
             return game.combat?.nextTurn();
           break;
-        case 'rest':
-          await actor.rest({type: action.id});
+        case 'long':
+        case 'short':
+          await actor.rest({type: actionId});
           break;
         case 'toggleItemPiles':
         case 'makeItemPile':
