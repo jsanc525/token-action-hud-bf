@@ -8,6 +8,8 @@
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/foundryworkshop)
 [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/forien)
 
+**NOTE:** This fork is not intended to be a permanent replacement and will only live until fixes and feats are merged upstream. Thank you to Forien for setting this up.  
+
 Token Action HUD Black Flag is a repositionable HUD of actions for a selected token prepared specially for the black-flag system.
 
 ![Token Action HUD](https://raw.githubusercontent.com/Foundry-Workshop/token-action-hud-bf/master/.github/assets/preview.gif)
@@ -24,7 +26,7 @@ Token Action HUD Black Flag is a repositionable HUD of actions for a selected to
 **IMPORTANT** — Token Action HUD Black Flag requires the [Token Action HUD Core](https://foundryvtt.com/packages/token-action-hud-core) module to be installed.
 
 **Required Core version:**
-- TAH black-flag v0.0.4: Core v2.0
+- TAH black-flag v0.0.4: Core v2 
 
 ## Recommended Modules
 * Token Action HUD Black Flag supports several actions from the [Item Piles](https://foundryvtt.com/packages/item-piles) modules
