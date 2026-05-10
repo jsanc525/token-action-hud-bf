@@ -1047,6 +1047,20 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         };
       }
 
+	characterTypes["addLuck"] = {
+      id: "addLuck",
+      name: game.i18n.localize("Add Luck"),
+      tooltip: game.i18n.localize("BF.Luck.Action.Add"),
+      system: {actionId: "addLuck"}
+    };
+
+    characterTypes["removeLuck"] = {
+      id: "removeLuck",
+      name: game.i18n.localize("Remove Luck"),
+      tooltip: game.i18n.localize("BF.Luck.Action.Remove"),
+      system: {actionId: "removeLuck"}
+    };
+
       return {'character': characterTypes};
     }
 
@@ -1432,6 +1446,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         case 'long':
         case 'short':
           await actor.rest({type: actionId});
+          break;
+        case 'addLuck':
+          await actor.system.addLuck();
+          break;
+        case 'removeLuck':
+          await actor.update({ "system.attributes.luck.value": actor.system.attributes.luck.value - 1 });
           break;
         case 'toggleItemPiles':
         case 'makeItemPile':
