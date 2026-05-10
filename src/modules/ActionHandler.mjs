@@ -613,6 +613,20 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
       }
 
+	characterTypes["addLuck"] = {
+      id: "addLuck",
+      name: game.i18n.localize("Add Luck"),
+      tooltip: game.i18n.localize("BF.Luck.Action.Add"),
+      system: {actionId: "addLuck"}
+    }
+
+    characterTypes["removeLuck"] = {
+      id: "removeLuck",
+      name: game.i18n.localize("Remove Luck"),
+      tooltip: game.i18n.localize("BF.Luck.Action.Remove"),
+      system: {actionId: "removeLuck"}
+    }
+
       return {'character': characterTypes};
     }
 
