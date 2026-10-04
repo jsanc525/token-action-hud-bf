@@ -930,7 +930,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           name: item.name,
           listName: this.#getListName('container', item.name),
           type: 'system',
-          icon1: '<i class="fas fa-box-open></i>',
+          icon1: '<i class="fas fa-box-open"></i>',
           settings: {
             image: coreModule.api.Utils.getImage(item),
             style: 'tab'
@@ -1037,6 +1037,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
     async #buildUtilityCharacter() {
       const characterTypes = {};
+      const deathStatus = this.actor?.system?.attributes?.death?.status;
+      const isStable =  this.actor?.statuses?.has('stable');
+
 
       for (const [type, config] of Object.entries(CONFIG.BlackFlag.rest.types)) {
         characterTypes[type + "Rest"] = {
@@ -1060,6 +1063,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
       tooltip: game.i18n.localize("BF.Luck.Action.Remove"),
       system: {actionId: "removeLuck"}
     };
+
+    if (deathStatus === 'dying' && !isStable) {
+      characterTypes["deathSave"] = {
+        id: "deathSave",
+        name: game.i18n.localize("Death Save"),
+        tooltip: game.i18n.localize("Roll Death Saving Throw"),
+        system: {actionId: "deathSave"}
+      };
+    }
 
       return {'character': characterTypes};
     }
@@ -1452,6 +1464,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           break;
         case 'removeLuck':
           await actor.update({ "system.attributes.luck.value": actor.system.attributes.luck.value - 1 });
+          break;
+        case 'deathSave':
+          await actor.rollDeathSave();
           break;
         case 'toggleItemPiles':
         case 'makeItemPile':
