@@ -494,7 +494,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
           name: item.name,
           listName: this.#getListName('container', item.name),
           type: 'system',
-          icon1: '<i class="fas fa-box-open></i>',
+          icon1: '<i class="fas fa-box-open"></i>',
           settings: {
             image: coreModule.api.Utils.getImage(item),
             style: 'tab'
